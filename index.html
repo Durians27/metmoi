@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In Ấn Tuấn Châu - Dịch vụ in nhanh online chất lượng cao tại TP.HCM. Chuyên in ấn phẩm văn phòng, truyền thông, bao bì, hồ sơ thiết kế với giá cạnh tranh.">
+    <meta name="keywords" content="in ấn, in nhanh, in offset, in ấn phẩm văn phòng, in bao bì, in truyền thông, Tuấn Châu, TP.HCM">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="In Ấn Tuấn Châu">
+    <meta property="og:title" content="In Ấn Tuấn Châu - Thế Giới In Nhanh Online">
+    <meta property="og:description" content="Dịch vụ in ấn chuyên nghiệp tại TP.HCM. In nhanh, chất lượng cao, giao hàng toàn quốc.">
+    <meta property="og:image" content="image/tuan chau logo.webp">
+    <meta property="og:image" content="image/tuan chau logo.webp">
+    <meta property="og:url" content="https://www.tuanchau.vn">
+    <meta property="og:type" content="website">
+    <title>In Ấn Tuấn Châu - Thế Giới In Nhanh Online</title>
+    <link rel="canonical" href="https://www.inantuanchau.vn">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00aeef;
+            --secondary-color: #446084;
+            --header-footer-bg: #eaf3f8;
+            --light-red: #f8eaf1;
+            --light-bg: #f8f8f8;
+            --dark-blue-footer: #37474f;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        .container {
+            max-width: 1410px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* HEADER & SEARCH */
+        header {
+            background: linear-gradient(to right, var(--header-footer-bg), #d5e9f8);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            max-height: 70px;
+            width: auto;
+        }
+        .logo-text {
+            margin-left: 10px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4em;
+            color: var(--secondary-color);
+        }
+
+        /* NAVIGATION BAR */
+        nav.main-nav {
+            background-color: var(--secondary-color);
+            color: white;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .nav-list.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--secondary-color);
+            z-index: 1000;
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            will-change: transform, opacity;
+        }
+        .nav-list.active.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .nav-list > li {
+            position: relative;
+            flex: 1;
+        }
+        .nav-list > li > a {
+            display: block;
+            padding: 14px 10px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: var(--font-heading);
+            font-size: 0.9em;
+            text-align: left;
+        }
+        .nav-list > li:hover > a {
+            background-color: var(--primary-color);
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--light-bg);
+            border: 1px solid #ddd;
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            padding: 5px 0;
+            min-width: 250px;
+            border-radius: 0 0 5px 5px;
+        }
+        .nav-list > li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu.active {
+            display: block;
+        }
+        .sub-menu a {
+            color: #333;
+            padding: 8px 15px;
+            display: block;
+            white-space: nowrap;
+            font-family: var(--font-body);
+            font-size: 0.9em;
+            text-align: left;
+        }
+        .sub-menu a:hover {
+            background-color: var(--header-footer-bg);
+            color: var(--secondary-color);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* BANNER SLIDESHOW - CHỈNH SỬA TỈ LỆ CHO 4372x1072 */
+        .banner-slideshow {
+            height: 0; 
+            padding-top: 24.52%; /* Tỉ lệ chính xác: 1072/4372 * 100% */
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: #333;
+            font-size: 1.8em;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover; /* Ảnh sẽ phủ kín khung tỉ lệ chuẩn */
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            will-change: opacity;
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .slide.error {
+            background-color: #ccc;
+            background-image: none;
+        }
+
+        /* PRODUCT SECTIONS */
+        .section-title {
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-bg);
+            margin-bottom: 20px;
+        }
+        .section-title h2 {
+            font-size: 2em;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            display: inline-block;
+            padding-top: 0;
+            margin-left: 10px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 10px;
+        }
+        .product-grid-new {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 10px;
+        }
+        .large-item-container {
+            width: 100%;
+        }
+        .small-items-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .product-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            background-color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 280px;
+        }
+        .product-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        .product-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.4s ease-out;
+            loading: lazy;
+        }
+        .product-box:hover img {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+        .product-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .large-item {
+            min-height: 280px;
+        }
+        .large-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+        .large-item p {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        .small-item .product-overlay {
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+        }
+        .small-item h3 {
+            font-size: 1em;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .details-button {
+            display: inline-block;
+            padding: 7px 14px;
+            color: white;
+            font-size: 0.85em;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+            transform: scale(1);
+            font-family: var(--font-heading);
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            border: none;
+        }
+        .details-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* SINGLE BANNER - CHỈNH SỬA TỈ LỆ CHO 4372x1072 */
+        .single-banner {
+            height: 0; 
+            padding-top: 24.52%; /* Tỉ lệ chính xác: 1072/4372 * 100% */
+            margin: 30px 0;
+            border-radius: 0; 
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            width: 100%; 
+            position: relative;
+        }
+        .single-banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ảnh sẽ phủ kín khung tỉ lệ chuẩn */
+            loading: lazy;
+        }
+        
+        /* PROMO BANNER FIX - FULL WIDTH */
+        .promo-banner {
+            margin: 20px 0; 
+            text-align: center; 
+            border-radius: 0; 
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            width: 100%; 
+        }
+        .promo-banner a {
+            display: block;
+            width: 100%;
+        }
+        .promo-banner img {
+            width: 100%; 
+            height: auto; 
+            display: block;
+            object-fit: cover; 
+        }
+
+        /* VIDEO & ABOUT SECTION */
+        .video-about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 40px 0;
+        }
+        .about-text {
+            order: 2;
+        }
+        .video-embed {
+            order: 1;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+        }
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .about-text h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 10px;
+        }
+        .about-text p {
+            font-size: 1em;
+        }
+
+        /* WHY CHOOSE US */
+        .why-choose-us {
+            background-color: var(--light-bg);
+            padding: 50px 0;
+        }
+        .why-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .why-header .title-box {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 0 40px 40px 0;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: var(--font-heading);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .why-grid-new {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding: 0 10px;
+        }
+        .why-item-new {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        .why-item-new:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .why-item-new i {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .why-item-new:hover i {
+            color: var(--secondary-color);
+        }
+        .why-item-new h4 {
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .why-item-new p {
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer.cdw-footer {
+            background: linear-gradient(to right, #e0e6ec, #d0d7e0);
+            color: #333;
+            padding: 40px 0 0;
+        }
+        .footer-cols {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #aaa;
+        }
+        .footer-col {
+            width: 100%;
+        }
+        .footer-col h3 {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .footer-logo img {
+            max-height: 60px;
+            width: auto;
+            margin-bottom: 10px;
+            loading: lazy;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9em;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-list li i {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .contact-list li a {
+            color: #333;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li a {
+            color: #555;
+            display: block;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+            transition: padding-left 0.2s;
+        }
+        .map-embed {
+            position: relative;
+            padding-bottom: 150px;
+            height: 0;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+        }
+        .copyright-footer {
+            background-color: var(--dark-blue-footer);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            margin-top: 0;
+        }
+        .copyright-footer strong {
+            color: var(--primary-color);
+        }
+
+        /* FLOATING CONTACT BUTTONS */
+        .contact-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .contact-button i {
+            color: white;
+            font-size: 1.8em;
+        }
+        .contact-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.15);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+        }
+        .contact-button.phone-call {
+            background-color: #e62020;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(230, 32, 32, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(230, 32, 32, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 32, 32, 0); }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+            }
+            .nav-list.active {
+                display: flex;
+            }
+            .nav-list > li > a {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+            .sub-menu {
+                position: static;
+                display: none;
+                background-color: #f0f0f0;
+                border: none;
+                box-shadow: none;
+                border-radius: 0;
+                min-width: 100%;
+                padding-left: 20px;
+            }
+            .sub-menu.active {
+                display: block;
+            }
+            .sub-menu a {
+                padding: 10px 30px;
+                font-size: 0.95em;
+                text-align: left;
+            }
+            .banner-slideshow {
+                padding-top: 24.52%; /* Giữ nguyên tỉ lệ trên mobile để không bị zoom */
+                width: 100%; 
+            }
+            .promo-banner, .single-banner { 
+                margin: 10px 0;
+                height: auto;
+                padding-top: 24.52%; /* Giữ nguyên tỉ lệ trên mobile */
+            }
+            .product-box {
+                height: 250px;
+            }
+            .large-item-container {
+                order: 1;
+            }
+            .small-items-container {
+                order: 2;
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+            .video-about-section {
+                flex-direction: column;
+            }
+            .why-header {
+                flex-direction: column;
+            }
+            .why-header .title-box {
+                font-size: 1em;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            .why-grid-new {
+                padding-left: 0;
+            }
+            .footer-cols {
+                flex-direction: column;
+            }
+            .footer-col {
+                width: 100%;
+            }
+            .contact-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+            .contact-button {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .nav-list > li > a {
+                font-size: 0.85em;
+                padding: 12px 8px;
+                text-align: left;
+            }
+            .sub-menu {
+                min-width: 200px;
+            }
+            .product-grid-new {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .large-item-container {
+                flex: 1;
+                min-width: 35%;
+            }
+            .small-items-container {
+                flex: 2;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .video-about-section {
+                flex-direction: column;
+            }
+            .footer-cols {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .footer-col {
+                width: 48%;
+            }
+            .banner-slideshow {
+                padding-top: 24.52%; /* Giữ nguyên tỉ lệ */
+            }
+            .single-banner {
+                padding-top: 24.52%; /* Giữ nguyên tỉ lệ */
+            }
+        }
+        @media (min-width: 1025px) {
+            .product-grid-new {
+                flex-direction: row;
+                align-items: stretch;
+            }
+            .large-item-container {
+                flex: 1;
+                min-width: 35%;
+            }
+            .small-items-container {
+                flex: 2;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
+            .video-about-section {
+                flex-direction: row;
+            }
+            .about-text {
+                order: 1;
+                flex: 1;
+            }
+            .video-embed {
+                order: 2;
+                flex: 1;
+            }
+            .why-header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .why-grid-new {
+                flex-direction: row;
+                padding-left: 30px;
+                flex: 1;
+                gap: 30px;
+            }
+            .why-item-new {
+                width: 30%;
+            }
+            .footer-cols {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .footer-col {
+                width: 23%;
+            }
+            .banner-slideshow {
+                padding-top: 24.52%; /* Giữ nguyên tỉ lệ */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="image/tuan chau logo.webp" alt="In Ấn Tuấn Châu Logo" loading="lazy">
+                    </div>
+                    <div class="logo-text">IN ẤN TUẤN CHÂU</div>
+                </div>
+                <button class="hamburger"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="aptt/an-pham-truyen-thong.html">Ấn Phẩm Truyền Thông</a>
+                        <ul class="sub-menu">
+                            <li><a href="aptt/brochure.html">In Brochure</a></li>
+                            <li><a href="aptt/in-thiep-moi.html">In Thiệp Mời</a></li>
+                            <li><a href="aptt/in-menu.html">In Menu</a></li>
+                            <li><a href="aptt/catalogue-kim-giua.html">In Catalogue kim giữa</a></li>
+                            <li><a href="aptt/catalogue-dong-keo.html">In Catalogue Đóng Keo</a></li>
+                            <li><a href="aptt/in-voucher.html">In Voucher – Coupon</a></li>
+                            <li><a href="aptt/cardvisit.html">In Card Visit Cao Cấp</a></li>
+                            <li><a href="aptt/lich-de-ban.html">In Lịch Để Bàn</a></li>
+                            <li><a href="aptt/to-roi.html">In Tờ Rơi</a></li>
+                            <li><a href="aptt/artbook.html">In Artbook</a></li>
+                            <li><a href="aptt/folder.html">In Folder</a></li>
+                            <li><a href="aptt/standee.html">In Standee</a></li>
+                            <li><a href="aptt/hashtag.html">In Hashtag - Formex</a></li>
+                            <li><a href="aptt/backdrop.html">In Backdrop - Hiflex</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tem/tem.html">Tem Nhãn Decal</a>
+                        <ul class="sub-menu">
+                            <li><a href="tem/tem-giay.html">In Tem Giấy</a></li>
+                            <li><a href="tem/tem-krack.html">In Tem Krack</a></li>
+                            <li><a href="tem/tem-mau.html">In Tem 7 Màu</a></li>
+                            <li><a href="tem/tem-nhua.html">In Tem Nhựa</a></li>
+                            <li><a href="tem/tem-trong.html">In Tem Trong Suốt</a></li>
+                            <li><a href="tem/tem-xi.html">In Tem Xi Bạc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="apvp/an-pham-van-phong.html">Ấn Phẩm Văn Phòng</a>
+                        <ul class="sub-menu">
+                            <li><a href="apvp/bia-ma-vang.html">In Bìa Mạ Vàng Đóng Cuốn</a></li>
+                            <li><a href="apvp/in-tieu-de.html">In Giấy Tiêu Đề</a></li>
+                            <li><a href="apvp/in-so-tay.html">In Sổ Tay Đóng Lò Xo</a></li>
+                            <li><a href="apvp/in-photobook.html">In Photobook</a></li>
+                            <li><a href="apvp/in-bia-kep.html">In Bìa Kẹp Hồ Sơ</a></li>
+                            <li><a href="apvp/in-bia-thu-ttk.html">In Bao Thư Theo Thiết Kế</a></li>
+                            <li><a href="apvp/in-bao-thu-gs.html">In Bao Thư Gấp Sẵn</a></li>
+                            <li><a href="apvp/in-name-card.html">In Name Card</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="hstk/ho-so-thie-ke.html">Hồ Sơ Thiết Kế</a>
+                        <ul class="sub-menu">
+                            <li><a href="hstk/noi-that.html">In Hồ Sơ Thiết Kế Nội Thất</a></li>
+                            <li><a href="hstk/kien-truc.html">In Hồ Sơ Thiết Kế Kiến Trúc</a></li>
+                            <li><a href="hstk/canh-quan.html">In Hồ Sơ Thiết Kế Cảnh Quan</a></li>
+                            <li><a href="hstk/nang-luc.html">In Hồ Sơ Năng Lực</a></li>
+                            <li><a href="hstk/yearbook.html">In Kỷ Yếu YearBook</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="offset/in-offset.html">In Giá Rẻ OffSet</a>
+                        <ul class="sub-menu">
+                            <li><a href="offset/to-roi-offset.html">In Tờ Rơi Offset</a></li>
+                            <li><a href="offset/brochure-offset.html">In Brochure OffSet</a></li>
+                            <li><a href="offset/catalogue-offset.html">In Catalogue OffSet</a></li>
+                            <li><a href="offset/danh-thiep-offset.html">In Danh Thiếp OffSet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="dvk/dich-vu-khac.html">Dịch Vụ Khác</a>
+                        <ul class="sub-menu">
+                            <li><a href="dvk/hop-giay.html">In Hộp Giấy</a></li>
+                            <li><a href="dvk/tui-giay.html">In Túi Giấy</a></li>
+                            <li><a href="dvk/tag-giay.html">In Tag Giấy</a></li>
+                            <li><a href="dvk/chup.html">Chụp ảnh thẻ</a></li>
+                            <li><a href="dvk/photo.html">Photo tài liệu</a></li>
+                            <li><a href="dvk/scan.html">Scan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#lien he">Liên Hệ Ngay</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="banner-slideshow">
+        <div class="slide active" data-src="image/banner5.webp"></div>
+        <div class="slide" data-src="image/banner1.webp"></div>
+        <div class="slide" data-src="image/banner2.webp"></div>
+        <div class="slide" data-src="image/banner3.webp"></div>
+    </section>
+
+    <div class="container">
+        <section id="an-pham-truyen-thong">
+            <div class="section-title">
+                <h2>Ấn Phẩm Truyền Thông</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="aptt/an-pham-truyen-thong.html" class="product-box large-item">
+                        <img src="image/anh-cata.webp" alt="Ấn Phẩm Truyền Thông" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>Ấn Phẩm Truyền Thông</h3>
+                            <p>14 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="aptt/brochure.html" class="product-box small-item">
+                        <img src="image/brochure.webp" alt="In Brochure" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Brochure</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="aptt/catalogue-kim-giua.html" class="product-box small-item">
+                        <img src="image/kim-giua.webp" alt="In Catalogue Kim Giữa">
+                        <div class="product-overlay">
+                            <h3>In Catalogue Kim Giữa</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="aptt/catalogue-dong-keo.html" class="product-box small-item">
+                        <img src="image/dong-keo.webp" alt="In Catalogue Đóng Keo">
+                        <div class="product-overlay">
+                            <h3>In Catalogue Đóng Keo</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="aptt/in-menu.html" class="product-box small-item">
+                        <img src="image/menu.webp" alt="In Menu" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Menu</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="aptt/in-voucher.html" class="product-box small-item">
+                        <img src="image/voucher.webp" alt="In Voucher - Coupon" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Voucher - Coupon</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="aptt/cardvisit.html" class="product-box small-item">
+                        <img src="image/cardvisit.webp" alt="In Card Visit Cao Cấp" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Card Visit Cao Cấp</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="tem">
+            <div class="section-title">
+                <h2>Tem Nhãn Decal</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="tem/tem.html" class="product-box large-item">
+                        <img src="image/tem.webp" alt="Tem Nhãn Decal" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>Tem Nhãn Decal</h3>
+                            <p>6 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="tem/tem-giay.html" class="product-box small-item">
+                        <img src="image/tem-giay.webp" alt="In Tem Giấy" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem Giấy</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="tem/tem-krack.html" class="product-box small-item">
+                        <img src="image/krack.webp" alt="In Tem Krack" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem Krack</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="tem/tem-mau.html" class="product-box small-item">
+                        <img src="image/tem-mau.webp" alt="In Tem 7 Màu" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem 7 Màu</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="tem/tem-nhua.html" class="product-box small-item">
+                        <img src="image/tem-nhua.webp" alt="In Tem Nhựa" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem Nhựa</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="tem/tem-trong.html" class="product-box small-item">
+                        <img src="image/tem-trong.webp" alt="In Tem Trong Suốt" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem Trong Suốt</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="tem/tem-xi.html" class="product-box small-item">
+                        <img src="image/tem-xi.webp" alt="In Tem Xi Bạc" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tem Xi Bạc</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="an-pham-van-phong">
+            <div class="section-title">
+                <h2>ẤN PHẨM VĂN PHÒNG</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="apvp/an-pham-van-phong.html" class="product-box large-item">
+                        <img src="image/an-pham-van-phong.webp" alt="Ấn Phẩm Văn Phòng" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>Ấn Phẩm Văn Phòng</h3>
+                            <p>8 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="apvp/bia-ma-vang.html" class="product-box small-item">
+                        <img src="image/bia-ma-vang.webp" alt="In Bìa Mạ Vàng Đóng Cuốn" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Bìa Mạ Vàng Đóng Cuốn</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="apvp/in-tieu-de.html" class="product-box small-item">
+                        <img src="image/giay-tieu-de.webp" alt="In Giấy Tiêu Đề" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Giấy Tiêu Đề</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="apvp/in-so-tay.html" class="product-box small-item">
+                        <img src="image/so-tay.webp" alt="In Sổ Tay Đóng Lò Xo" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Sổ Tay Đóng Lò Xo</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="apvp/in-photobook.html" class="product-box small-item">
+                        <img src="image/photobook.webp" alt="In Photobook" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Photobook</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="apvp/in-bia-kep.html" class="product-box small-item">
+                        <img src="image/bia-kep.webp" alt="In Bìa Kẹp Hồ Sơ" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Bìa Kẹp Hồ Sơ</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="apvp/in-bia-thu-ttk.html" class="product-box small-item">
+                        <img src="image/bao0thu-tk.webp" alt="In Bao Thư Theo Thiết Kế" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Bao Thư Theo Thiết Kế</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="ho-so-thiet-ke">
+            <div class="section-title">
+                <h2>HỒ SƠ THIẾT KẾ</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="hstk/ho-so-thie-ke.html" class="product-box large-item">
+                        <img src="image/ho-so-thiet-ke.webp" alt="Hồ Sơ Thiết Kế" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>Hồ Sơ Thiết Kế</h3>
+                            <p>5 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="hstk/noi-that.html" class="product-box small-item">
+                        <img src="image/ho-so-noi-that.webp" alt="In Hồ Sơ Thiết Kế Nội Thất" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Hồ Sơ Thiết Kế Nội Thất</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="hstk/kien-truc.html" class="product-box small-item">
+                        <img src="image/ho-so-kien-truc.webp" alt="In Hồ Sơ Thiết Kế Kiến Trúc" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Hồ Sơ Thiết Kế Kiến Trúc</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="hstk/canh-quan.html" class="product-box small-item">
+                        <img src="image/ho-so-canh-quan.webp" alt="In Hồ Sơ Thiết Kế Cảnh Quan" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Hồ Sơ Thiết Kế Cảnh Quan</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="hstk/nang-luc.html" class="product-box small-item">
+                        <img src="image/ho-so-nang-luc.webp" alt="In Hồ Sơ Năng Lực" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Hồ Sơ Năng Lực</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="hstk/yearbook.html" class="product-box small-item">
+                        <img src="image/yearbook.webp" alt="In Kỷ Yếu YearBook" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Kỷ Yếu YearBook</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="in-offset">
+            <div class="section-title">
+                <h2>IN OFFSET</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="offset/in-offset.html" class="product-box large-item">
+                        <img src="image/in-offset.webp" alt="In Offset" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Offset</h3>
+                            <p>4 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="offset/to-roi-offset.html" class="product-box small-item">
+                        <img src="image/to-roi-offset.webp" alt="In Tờ Rơi Offset" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tờ Rơi Offset</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="offset/brochure-offset.html" class="product-box small-item">
+                        <img src="image/brochure-offset.webp" alt="In Brochure Offset" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Brochure Offset</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="offset/catalogue-offset.html" class="product-box small-item">
+                        <img src="image/catalogue-offset.webp" alt="In Catalogue Offset" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Catalogue Offset</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="offset/danh-thiep-offset.html" class="product-box small-item">
+                        <img src="image/danh-thiep.webp" alt="In Danh Thiếp Offset" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Danh Thiếp Offset</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="dich-vu-khac">
+            <div class="section-title">
+                <h2>DỊCH VỤ KHÁC</h2>
+            </div>
+            <div class="product-grid-new">
+                <div class="large-item-container">
+                    <a href="dvk/dich-vu-khac.html" class="product-box large-item">
+                        <img src="image/dich-vu-khac.webp" alt="Dịch Vụ Khác" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>Dịch Vụ Khác</h3>
+                            <p> 6 sản phẩm</p>
+                            <span class="details-button">Xem thêm</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="small-items-container">
+                    <a href="dvk/hop-giay.html" class="product-box small-item">
+                        <img src="image/hop-giay.webp" alt="In Hộp Giấy" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Hộp Giấy</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="dvk/tui-giay.html" class="product-box small-item">
+                        <img src="image/tui-giay.webp" alt="In Túi Giấy" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Túi Giấy</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                    <a href="dvk/tag-giay.html" class="product-box small-item">
+                        <img src="image/tag-giay.webp" alt="In Tag Giấy" loading="lazy">
+                        <div class="product-overlay">
+                            <h3>In Tag Giấy</h3>
+                            <span class="details-button">Xem chi tiết</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div> <section class="single-banner">
+        <img src="image/banner4.webp" alt="Khuyến mãi đặc biệt tháng 11" loading="lazy">
+    </section>
+    <div class="container"> <section class="video-about-section">
+            <div class="about-text">
+                <h3>In ấn Tuấn Châu: Thế giới in nhanh online chất lượng cao tại TP.HCM</h3>
+                <p>Tuấn Châu Printing là đối tác in ấn đáng tin cậy, cung cấp giải pháp in nhanh kỹ thuật số và in offset chất lượng cao. Chúng tôi chuyên in các ấn phẩm văn phòng, truyền thông, hồ sơ thiết kế và bao bì với công nghệ hiện đại, cam kết màu sắc chuẩn, giao hàng đúng hẹn và giá cả cạnh tranh.</p>
+                <p>Với đội ngũ chuyên nghiệp và hệ thống máy móc tiên tiến, chúng tôi giúp bạn hiện thực hóa mọi ý tưởng in ấn một cách nhanh chóng và hiệu quả nhất.</p>
+            </div>
+            <div class="video-embed">
+                <iframe src="image/video.mp4" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+        <section class="why-choose-us">
+            <div class="why-header">
+                <div class="title-box">
+                    TẠI SAO CHỌN <br>CHÚNG TÔI
+                </div>
+                <div class="why-grid-new">
+                    <div class="why-item-new">
+                        <i class="fas fa-headset"></i>
+                        <h4>Tư vấn tận tâm</h4>
+                        <p>Khách hàng đặt in nhanh online tại chúng tôi sẽ được tư vấn nhiệt tình với quy cách in và tiêu chuẩn theo mong muốn của Quý Khách.</p>
+                    </div>
+                    <div class="why-item-new">
+                        <i class="fas fa-tag"></i>
+                        <h4>Giá thành hợp lý</h4>
+                        <p>Chúng tôi cam kết gửi tới Quý khách hàng báo giá cạnh tranh nhất trên thị trường tương xứng với chất lượng sản phẩm mà chúng tôi cung cấp.</p>
+                    </div>
+                    <div class="why-item-new">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Vận Chuyển Nhanh</h4>
+                        <p>Hỗ trợ dịch vụ giao hàng tận nơi trong nội thành TP.HCM, hỗ trợ giao hàng ra bến xe đối với khách hàng ngoại tỉnh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="cdw-footer" id="lien he">
+        <div class="container">
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="image/tuan chau logo.webp" alt="In Ấn Tuấn Châu Footer Logo" loading="lazy">
+                    </div>
+                    <h3>IN ẤN TUẤN CHÂU</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i><span>24 Đường D5, Phường Thạnh Mỹ Tây, Tp.HCM</span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:+84902544948">0902 544 948</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:+84968229972">0968 229 972</a></span></li>
+                        <li><i class="fas fa-envelope"></i><span><a href="mailto:sinhvien2d5@gmail.com">sinhvien2d5@gmail.com</a></span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính Sách</h3>
+                    <ul>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Đổi trả và Hoàn tiền</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Thông Tin</h3>
+                    <ul>
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="#">Hình Thức Thanh Toán</a></li>
+                        <li><a href="#">Liên Hệ Đặt Hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Địa Chỉ Trên Google Maps</h3>
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.06102861952!2d106.71273319999999!3d10.8066379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292ec67edf2d%3A0x16af6b22e066f60!2zUEhPVE9DT1BZIC0gQ0jhu6RQIEhDjE5IIFRI4bq6IC0gVFXhuqROIENIw4JV!5e0!3m2!1svi!2s!4v1762770369318!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-footer">
+            <p>Copyright 2025 © <strong>Bản Quyền Thuộc Công Ty TNHH Dịch Vụ Văn Phòng Tuấn Châu</strong></p>
+            <p>Designed by Durians.</p>
+        </div>
+    </footer>
+    <div class="contact-buttons">
+        <a href="tel:+84902544948" class="contact-button phone-call" title="Gọi Ngay Hotline">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://www.facebook.com/nhainbinhthanh" target="_blank" class="contact-button" title="Liên hệ qua Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://zalo.me/0968229972" target="_blank" class="contact-button" title="Liên hệ qua Zalo">
+            <i class="fas fa-comment-dots"></i>
+        </a>
+        <a href="mailto:sinhvien2d5@gmail.com" class="contact-button" title="Liên hệ qua Gmail">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Slideshow functionality
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            // Load images dynamically
+            slides.forEach((slide, index) => {
+                const img = new Image();
+                img.src = slide.getAttribute('data-src');
+                img.onload = () => {
+                    slide.style.backgroundImage = `url(${slide.getAttribute('data-src')})`;
+                    if (index === 0) slide.classList.add('active'); // Đảm bảo slide đầu tiên hiển thị
+                };
+                img.onerror = () => {
+                    slide.classList.add('error');
+                    slide.style.backgroundImage = 'none'; // Xóa background nếu lỗi
+                    console.log(`Failed to load image: ${slide.getAttribute('data-src')}`);
+                };
+            });
+
+            function showSlide(index) {
+                if (slides.length === 0) return;
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index && !slide.classList.contains('error')) {
+                        slide.classList.add('active');
+                    } else if (i === index && slide.classList.contains('error')) {
+                        // Nếu slide lỗi, chuyển sang slide tiếp theo
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        showSlide(currentSlide);
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Khởi động slideshow
+            if (slides.length > 0) {
+                showSlide(currentSlide); // Hiển thị slide đầu tiên
+                setInterval(nextSlide, 5000); // Chuyển slide mỗi 5 giây
+            }
+
+            // Hamburger menu with requestAnimationFrame
+            const hamburger = document.querySelector('.hamburger');
+            const navList = document.querySelector('.nav-list');
+
+            function toggleMenu() {
+                navList.classList.toggle('active');
+                if (navList.classList.contains('active')) {
+                    requestAnimationFrame(() => navList.classList.add('show'));
+                } else {
+                    navList.classList.remove('show');
+                }
+            }
+
+            hamburger.addEventListener('click', toggleMenu);
+
+            // Event delegation for sub-menus and links
+            navList.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (!link) return;
+
+                if (window.innerWidth <= 768) {
+                    const subMenu = link.nextElementSibling;
+                    if (subMenu && subMenu.classList.contains('sub-menu')) {
+                        e.preventDefault();
+                        subMenu.classList.toggle('active');
+                    } else {
+                        navList.classList.remove('active', 'show');
+                    }
+                }
+            });
+
+            // Debounced resize handler
+            function debounce(func, wait) {
+                let timeout;
+                return function(...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+
+            const handleResize = debounce(() => {
+                if (window.innerWidth > 768) {
+                    navList.classList.remove('active', 'show');
+                    document.querySelectorAll('.sub-menu').forEach(subMenu => {
+                        subMenu.classList.remove('active');
+                    });
+                }
+            }, 250);
+
+            window.addEventListener('resize', handleResize);
+        });
+    </script>
+</body>
+</html>

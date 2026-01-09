@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Voucher - Coupon - Ấn Phẩm Truyền Thông Hiệu Quả | IN ẤN TUẤN CHÂU</title>
+    <meta name="description" content="Dịch vụ in voucher, coupon chất lượng cao tại In Ấn Tuấn Châu. Thiết kế tùy chỉnh, in ấn sắc nét, gia công chuyên nghiệp cho khuyến mãi, quảng bá thương hiệu.">
+    <meta name="keywords" content="in voucher, in coupon, in ấn truyền thông, in ấn Tuấn Châu, voucher khuyến mãi, coupon quảng cáo">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #00aeef;
+            --secondary-color: #446084;
+            --header-footer-bg: #eaf3f8;
+            --light-red: #f8eaf1;
+            --light-bg: #f8f8f8;
+            --dark-blue-footer: #37474f;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        .container {
+            max-width: 1410px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(to right, var(--header-footer-bg), #d5e9f8);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            max-height: 70px;
+            width: auto;
+        }
+        .logo-text {
+            margin-left: 10px;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4em;
+            color: var(--secondary-color);
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            width: 350px;
+            font-family: var(--font-body);
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+        .search-box button {
+            padding: 10px 15px;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .search-box button:hover {
+            background-color: #0093c4;
+        }
+        nav.main-nav {
+            background-color: var(--secondary-color);
+            color: white;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        .nav-list > li {
+            position: relative;
+        }
+        .nav-list > li > a {
+            display: block;
+            padding: 14px 18px;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: var(--font-heading);
+            font-size: 0.9em;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-list > li:hover > a {
+            background-color: var(--primary-color);
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--light-bg);
+            border: 1px solid #ddd;
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            padding: 5px 0;
+            min-width: 250px;
+            border-radius: 0 0 5px 5px;
+        }
+        .nav-list > li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu a {
+            color: #333;
+            padding: 8px 15px;
+            display: block;
+            white-space: nowrap;
+            font-family: var(--font-body);
+            font-size: 0.9em;
+        }
+        .sub-menu a:hover {
+            background-color: var(--header-footer-bg);
+            color: var(--secondary-color);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* BREADCRUMB */
+        .breadcrumb {
+            padding: 15px 0;
+            font-size: 0.85em;
+            color: #777;
+        }
+        .breadcrumb a {
+            color: #777;
+        }
+        .breadcrumb span {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* PRODUCT DETAIL SECTION */
+        .product-detail-section {
+            padding: 20px 0 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .product-gallery {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        .main-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+        }
+        .product-info {
+            flex: 2;
+            min-width: 300px;
+        }
+        .product-info h1 {
+            color: var(--secondary-color);
+            font-size: 2.2em;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .price-quote-box {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .price-quote-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+        .call-to-action {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .quote-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff6600;
+            color: white;
+            border-radius: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .quote-button:hover {
+            background-color: #e65c00;
+            transform: translateY(-2px);
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .features-list li {
+            padding: 5px 0;
+            font-size: 1em;
+            display: flex;
+            align-items: flex-start;
+        }
+        .features-list li i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            margin-top: 3px;
+            font-size: 1.1em;
+        }
+
+        /* CONTACT FORM */
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 0.9em;
+        }
+        .contact-form textarea {
+            height: 100px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #0093c4;
+        }
+
+        /* DETAIL TABS */
+        .product-details-tabs {
+            margin-top: 40px;
+        }
+        .tabs-header {
+            display: flex;
+            border-bottom: 2px solid var(--light-bg);
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #fff;
+            color: var(--secondary-color);
+            font-weight: 500;
+            border: 1px solid var(--light-bg);
+            border-bottom: none;
+            margin-bottom: -2px;
+            transition: background-color 0.3s;
+        }
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content h4 {
+            color: var(--primary-color);
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 5px;
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .spec-table th, .spec-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9em;
+        }
+        .spec-table th {
+            background-color: var(--light-bg);
+            width: 30%;
+            font-weight: 500;
+        }
+
+        /* RELATED PRODUCTS */
+        .related-products {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 10px;
+        }
+        .related-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--box-shadow);
+            background-color: white;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 300px;
+        }
+        .related-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+        .related-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.4s ease-out;
+        }
+        .related-box:hover img {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+        .related-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: background 0.3s;
+        }
+        .related-overlay h3 {
+            font-size: 1.2em;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .details-button {
+            display: inline-block;
+            padding: 7px 14px;
+            color: white;
+            font-size: 0.85em;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+            transform: scale(1);
+            font-family: var(--font-heading);
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            border: none;
+        }
+        .details-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* FOOTER */
+        footer.cdw-footer {
+            background: linear-gradient(to right, #e0e6ec, #d0d7e0);
+            color: #333;
+            padding: 40px 0 0;
+        }
+        .footer-cols {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #aaa;
+        }
+        .footer-col {
+            width: 100%;
+        }
+        .footer-col h3 {
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .footer-logo img {
+            max-height: 60px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9em;
+        }
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact-list li i {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+        .contact-list li a {
+            color: #333;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-col ul li a {
+            color: #555;
+            display: block;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+            transition: padding-left 0.2s;
+        }
+        .map-embed {
+            position: relative;
+            padding-bottom: 150px;
+            height: 0;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+        }
+        .copyright-footer {
+            background-color: var(--dark-blue-footer);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            margin-top: 0;
+        }
+        .copyright-footer strong {
+            color: var(--primary-color);
+        }
+
+        /* CONTACT BUTTONS */
+        .contact-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+        .contact-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .contact-button i {
+            color: white;
+            font-size: 1.8em;
+        }
+        .contact-button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.15);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+        }
+        .contact-button.phone-call {
+            background-color: #e62020;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(230, 32, 32, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(230, 32, 32, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(230, 32, 32, 0); }
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 769px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .search-box input {
+                width: 100%;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .nav-list.active {
+                display: flex;
+            }
+            .nav-list > li {
+                width: 100%;
+            }
+            .nav-list > li > a {
+                padding: 10px;
+            }
+            .sub-menu {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                background-color: #f0f0f0;
+            }
+            .product-detail-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .product-gallery, .product-info {
+                min-width: 100%;
+            }
+            .product-info h1 {
+                font-size: 1.8em;
+            }
+            .tab-button {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+            .spec-table th, .spec-table td {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+            .related-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            .contact-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+            .contact-button {
+                width: 45px;
+                height: 45px;
+            }
+            .contact-button i {
+                font-size: 1.5em;
+            }
+        }
+        @media (min-width: 770px) {
+            .footer-cols {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .footer-col {
+                width: 23%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="../image/tuan chau logo.webp" alt="In Ấn Tuấn Châu Logo">
+                    </div>
+                    <div class="logo-text">IN ẤN TUẤN CHÂU</div>
+                </div>
+                <button class="hamburger"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Trang Chủ</a></li>
+                    <li><a href="an-pham-truyen-thong.html">Ấn Phẩm Truyền Thông</a>
+                        <ul class="sub-menu">
+                            <li><a href="brochure.html">In Brochure</a></li>
+                            <li><a href="in-thiep-moi.html">In Thiệp Mời</a></li>
+                            <li><a href="in-menu.html">In Menu</a></li>
+                            <li><a href="catalogue-kim-giua.html">In Catalogue kim giữa</a></li>
+                            <li><a href="catalogue-dong-keo.html">In Catalogue Đóng Keo</a></li>
+                            <li><a href="in-voucher.html">In Voucher – Coupon</a></li>
+                            <li><a href="cardvisit.html">In Card Visit Cao Cấp</a></li>
+                            <li><a href="lich-de-ban.html">In Lịch Để Bàn</a></li>
+                            <li><a href="to-roi.html">In Tờ Rơi</a></li>
+                            <li><a href="artbook.html">In Artbook</a></li>
+                            <li><a href="folder.html">In Folder</a></li>
+                            <li><a href="standee.html">In Standee</a></li>
+                            <li><a href="hashtag.html">In Hashtag - Formex</a></li>
+                            <li><a href="backdrop.html">In Backdrop - Hiflex</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../tem/tem.html">Tem Nhãn Decal</a>
+                        <ul class="sub-menu">
+                            <li><a href="../tem/tem-giay.html">In Tem Giấy</a></li>
+                            <li><a href="../tem/tem-krack.html">In Tem Krack</a></li>
+                            <li><a href="../tem/tem-mau.html">In Tem 7 Màu</a></li>
+                            <li><a href="../tem/tem-nhua.html">In Tem Nhựa</a></li>
+                            <li><a href="../tem/tem-trong.html">In Tem Trong Suốt</a></li>
+                            <li><a href="../tem/tem-xi.html">In Tem Xi Bạc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../apvp/an-pham-van-phong.html">Ấn Phẩm Văn Phòng</a>
+                        <ul class="sub-menu">
+                            <li><a href="../apvp/bia-ma-vang.html">In Bìa Mạ Vàng Đóng Cuốn</a></li>
+                            <li><a href="../apvp/in-tieu-de.html">In Giấy Tiêu Đề</a></li>
+                            <li><a href="../apvp/in-so-tay.html">In Sổ Tay Đóng Lò Xo</a></li>
+                            <li><a href="../apvp/in-photobook.html">In Photobook</a></li>
+                            <li><a href="../apvp/in-bia-kep.html">In Bìa Kẹp Hồ Sơ</a></li>
+                            <li><a href="../apvp/in-bia-thu-ttk.html">In Bao Thư Theo Thiết Kế</a></li>
+                            <li><a href="../apvp/in-bao-thu-gs.html">In Bao Thư Gấp Sẵn</a></li>
+                            <li><a href="../apvp/in-name-card.html">In Name Card</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../hstk/ho-so-thie-ke.html">Hồ Sơ Thiết Kế</a>
+                        <ul class="sub-menu">
+                            <li><a href="../hstk/noi-that.html">In Hồ Sơ Thiết Kế Nội Thất</a></li>
+                            <li><a href="../hstk/kien-truc.html">In Hồ Sơ Thiết Kế Kiến Trúc</a></li>
+                            <li><a href="../hstk/canh-quan.html">In Hồ Sơ Thiết Kế Cảnh Quan</a></li>
+                            <li><a href="../hstk/nang-luc.html">In Hồ Sơ Năng Lực</a></li>
+                            <li><a href="../hstk/yearbook.html">In Kỷ Yếu YearBook</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../offset/in-offset.html">In Giá Rẻ OffSet</a>
+                        <ul class="sub-menu">
+                            <li><a href="../offset/to-roi-offset.html">In Tờ Rơi Offset</a></li>
+                            <li><a href="../offset/brochure-offset.html">In Brochure OffSet</a></li>
+                            <li><a href="../offset/catalogue-offset.html">In Catalogue OffSet</a></li>
+                            <li><a href="../offset/danh-thiep-offset.html">In Danh Thiếp OffSet</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../dvk/dich-vu-khac.html">Dịch Vụ Khác</a>
+                        <ul class="sub-menu">
+                            <li><a href="../dvk/hop-giay.html">In Hộp Giấy</a></li>
+                            <li><a href="../dvk/tui-giay.html">In Túi Giấy</a></li>
+                            <li><a href="../dvk/tag-giay.html">In Tag Giấy</a></li>
+                            <li><a href="../dvk/chup.html">Chụp ảnh thẻ</a></li>
+                            <li><a href="../dvk/photo.html">Photo tài liệu</a></li>
+                            <li><a href="../dvk/scan.html">Scan</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#lien he">Liên Hệ Ngay</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">Trang Chủ</a> &gt;
+            <a href="an-pham-truyen-thong.html">Ấn Phẩm Truyền Thông</a> &gt;
+            <span>In Voucher - Coupon</span>
+        </div>
+
+        <section class="product-detail-section">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="../image/voucher.webp" alt="In Voucher - Coupon">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1>In Voucher - Coupon Hiệu Quả</h1>
+                <p>Voucher và coupon là công cụ quảng bá mạnh mẽ, giúp doanh nghiệp thu hút khách hàng và tăng doanh số. In Ấn Tuấn Châu cung cấp dịch vụ in voucher, coupon với thiết kế tùy chỉnh, in ấn sắc nét, và gia công chuyên nghiệp (cán màng, bế răng cưa, đánh số thứ tự), phù hợp cho các chương trình khuyến mãi, giảm giá, hoặc quà tặng.</p>
+                
+                <ul class="features-list">
+                    <li><i class="fas fa-ticket-alt"></i> <span>Tùy Chỉnh Thiết Kế: Thiết kế theo thương hiệu, chương trình khuyến mãi, hoặc sự kiện.</span></li>
+                    <li><i class="fas fa-print"></i> <span>In Ấn Chất Lượng Cao: Công nghệ in offset, màu sắc rực rỡ, chi tiết rõ nét.</span></li>
+                    <li><i class="fas fa-cut"></i> <span>Gia Công Chuyên Nghiệp: Cán màng, bế răng cưa, đánh số thứ tự, ép kim (tùy chọn).</span></li>
+                    <li><i class="fas fa-gift"></i> <span>Ứng Dụng Đa Dạng: Khuyến mãi bán hàng, quà tặng khách hàng, chiến dịch quảng cáo.</span></li>
+                </ul>
+
+                <div class="price-quote-box">
+                    <h3>Báo Giá & Đặt Hàng</h3>
+                    <p>Sản phẩm được in theo yêu cầu riêng (kích thước, số lượng, chất liệu, gia công). Vui lòng liên hệ hoặc để lại thông tin để nhận báo giá chính xác nhất.</p>
+                    <div class="call-to-action">
+                        <a href="tel:+84968229972" class="quote-button">
+                            <i class="fas fa-phone-alt"></i> GỌI NGAY: 0968 229 972
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-details-tabs">
+            <div class="tabs-header">
+                <button class="tab-button active" data-tab="thong-so">Thông Số Kỹ Thuật</button>
+                <button class="tab-button" data-tab="quy-trinh">Quy Trình Đặt In</button>
+                <button class="tab-button" data-tab="ung-dung">Ứng Dụng Thực Tế</button>
+            </div>
+
+            <div id="thong-so" class="tab-content active">
+                <h4>Chi tiết về chất liệu & kỹ thuật in</h4>
+                <table class="spec-table">
+                    <tr>
+                        <th>Kỹ thuật in chính</th>
+                        <td>In Offset, In Kỹ Thuật Số (Digital Printing)</td>
+                    </tr>
+                    <tr>
+                        <th>Chất liệu</th>
+                        <td>Giấy Couche (150-300gsm), Giấy Mỹ Thuật, Giấy Kraft</td>
+                    </tr>
+                    <tr>
+                        <th>Kích thước phổ biến</th>
+                        <td>9x5.5cm, 10x15cm, 15x7cm hoặc tùy chỉnh</td>
+                    </tr>
+                    <tr>
+                        <th>Gia công</th>
+                        <td>Cán màng bóng/mờ, bế răng cưa, đánh số thứ tự, ép kim, bế khuôn</td>
+                    </tr>
+                    <tr>
+                        <th>Yêu cầu thiết kế</th>
+                        <td>File thiết kế vector (AI, CDR, PDF), độ phân giải tối thiểu 300dpi</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="quy-trinh" class="tab-content">
+                <h4>Các bước để đặt hàng và nhận sản phẩm</h4>
+                <ol>
+                    <li><strong>Tiếp nhận yêu cầu & Báo giá:</strong> Khách hàng cung cấp thông tin (kích thước, số lượng, chất liệu, gia công, thiết kế).</li>
+                    <li><strong>Xác nhận & Đặt cọc:</strong> Chấp nhận báo giá và tiến hành đặt cọc.</li>
+                    <li><strong>Thiết kế & Duyệt mẫu:</strong> Hỗ trợ kiểm tra file, lên mẫu in thử, khách hàng duyệt file cuối.</li>
+                    <li><strong>In ấn & Gia công:</strong> In voucher/coupon và thực hiện gia công (cán màng, bế răng cưa, đánh số).</li>
+                    <li><strong>Kiểm tra & Giao hàng:</strong> Kiểm tra chất lượng cuối cùng và giao hàng tận nơi.</li>
+                </ol>
+            </div>
+
+            <div id="ung-dung" class="tab-content">
+                <h4>Sản phẩm thường được sử dụng cho mục đích nào?</h4>
+                <ul>
+                    <li><strong>Khuyến mãi bán hàng:</strong> Voucher giảm giá để thu hút khách hàng và tăng doanh số.</li>
+                    <li><strong>Quà tặng khách hàng:</strong> Coupon tặng kèm trong các chiến dịch quảng bá thương hiệu.</li>
+                    <li><strong>Sự kiện & Hội chợ:</strong> Voucher dùng trong các sự kiện đặc biệt hoặc triển lãm.</li>
+                    <li><strong>Chương trình khách hàng thân thiết:</strong> Coupon để khuyến khích khách hàng quay lại.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <h2 style="color: var(--secondary-color); font-size: 1.5em; border-bottom: 2px solid var(--light-bg); padding-bottom: 10px;">SẢN PHẨM ẤN PHẨM TRUYỀN THÔNG LIÊN QUAN</h2>
+            <div class="related-grid">
+                <a href="brochure.html" class="related-box">
+                    <img src="../image/brochure.webp" alt="In Brochure">
+                    <div class="related-overlay">
+                        <h3>In Brochure</h3>
+                        <span class="details-button">Xem chi tiết</span>
+                    </div>
+                </a>
+                <a href="in-thiep-moi.html" class="related-box">
+                    <img src="../image/thiep-moi.webp" alt="In Thiệp Mời">
+                    <div class="related-overlay">
+                        <h3>In Thiệp Mời</h3>
+                        <span class="details-button">Xem chi tiết</span>
+                    </div>
+                </a>
+                <a href="to-roi.html" class="related-box">
+                    <img src="../image/to-roi.webp" alt="In Tờ Rơi">
+                    <div class="related-overlay">
+                        <h3>In Tờ Rơi</h3>
+                        <span class="details-button">Xem chi tiết</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cdw-footer" id="lien he">
+        <div class="container">
+            <div class="footer-cols">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="../image/tuan chau logo.webp" alt="In Ấn Tuấn Châu Footer Logo">
+                    </div>
+                    <h3>IN ẤN TUẤN CHÂU</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i><span>24 Đường D5, Phường Thạnh Mỹ Tây, Tp.HCM</span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:+84902544948">0902 544 948</a></span></li>
+                        <li><i class="fas fa-phone"></i><span><a href="tel:+84968229972">0968 229 972</a></span></li>
+                        <li><i class="fas fa-envelope"></i><span><a href="mailto:sinhvien2d5@gmail.com">sinhvien2d5@gmail.com</a></span></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Chính Sách</h3>
+                    <ul>
+                        <li><a href="#">Quy định sử dụng</a></li>
+                        <li><a href="#">Bảo mật thông tin</a></li>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Đổi trả và Hoàn tiền</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Thông Tin</h3>
+                    <ul>
+                        <li><a href="#">Về Chúng Tôi</a></li>
+                        <li><a href="#">Tin Tức</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="#">Hình Thức Thanh Toán</a></li>
+                        <li><a href="#">Liên Hệ Đặt Hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Địa Chỉ Trên Google Maps</h3>
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.06102861952!2d106.71273319999999!3d10.8066379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175292ec67edf2d%3A0x16af6b22e066f60!2zUEhPVE9DT1BZIC0gQ0jhu6RQIEhDjE5IIFRI4bq6IC0gVFXhuqROIENIw4JV!5e0!3m2!1svi!2s!4v1762770369318!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-footer">
+            <p>Copyright 2025 © <strong>Bản Quyền Thuộc Công Ty TNHH Dịch Vụ Văn Phòng Tuấn Châu</strong></p>
+            <p>Designed by Durians.</p>
+        </div>
+    </footer>
+
+    <div class="contact-buttons">
+        <a href="tel:+84902544948" class="contact-button phone-call" title="Gọi Ngay Hotline">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://www.facebook.com/nhainbinhthanh" target="_blank" class="contact-button" title="Liên hệ qua Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://zalo.me/0968229972" target="_blank" class="contact-button" title="Liên hệ qua Zalo">
+            <i class="fas fa-comment-dots"></i>
+        </a>
+        <a href="mailto:sinhvien2d5@gmail.com" class="contact-button" title="Liên hệ qua Gmail">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const targetId = tab.getAttribute('data-tab');
+                    tabs.forEach(t => t.classList.remove('active'));
+                    contents.forEach(c => c.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            const hamburger = document.querySelector('.hamburger');
+            const navList = document.querySelector('.nav-list');
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+
+            navList.querySelectorAll('a').forEach(item => {
+                item.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navList.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

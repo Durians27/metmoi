@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="In Ấn Tuấn Châu - Dịch vụ in nhanh online chất lượng cao tại TP.HCM. Chuyên in ấn phẩm văn phòng, truyền thông, bao bì, hồ sơ thiết kế với giá cạnh tranh.">
+    <meta name="keywords" content="in ấn, in nhanh, in offset, in ấn phẩm văn phòng, in bao bì, in truyền thông, Tuấn Châu, TP.HCM">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="In Ấn Tuấn Châu - Thế Giới In Nhanh Online">
+    <meta property="og:description" content="Dịch vụ in ấn chuyên nghiệp tại TP.HCM. In nhanh, chất lượng cao, giao hàng toàn quốc.">
+    <meta property="og:image" content="image/tuan-chau-logo.png">
+    <meta property="og:url" content="https://www.tuanchau.vn">
+    <meta property="og:type" content="website">
+    <title>In Ấn Tuấn Châu - Thế Giới In Nhanh Online</title>
+    <link rel="canonical" href="https://www.tuanchau.vn">
+    <link rel="icon" href="image/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #00aeef;
+            --secondary-color: #446084;
+            --header-footer-bg: #eaf3f8;
+            --light-bg: #f8f8f8;
+            --dark-blue-footer: #37474f;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        body { font-family: var(--font-body); background:#fff; color:#333; line-height:1.6; min-height:100vh; }
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight:700; }
+        .container { max-width:1410px; margin:0 auto; padding:0 15px; }
+        a { color:var(--primary-color); text-decoration:none; }
+
+        /* HEADER */
+        header { background:linear-gradient(to right, var(--header-footer-bg), #d5e9f8); box-shadow:0 2px 4px rgba(0,0,0,0.08); position:relative; z-index:100; }
+        .header-top { display:flex; justify-content:space-between; align-items:center; padding:15px 0; }
+        .logo-container { display:flex; align-items:center; }
+        .logo img { max-height:70px; width:auto; }
+        .logo-text { margin-left:12px; font-size:1.5em; font-weight:700; color:var(--secondary-color); }
+        .hamburger { display:none; font-size:1.8em; cursor:pointer; color:var(--secondary-color); }
+
+        nav.main-nav { background:var(--secondary-color); border-bottom:3px solid var(--primary-color); }
+        .nav-list { list-style:none; display:flex; justify-content:space-around; flex-wrap:wrap; margin:0; padding:0; }
+        .nav-list > li { position:relative; flex:1; }
+        .nav-list > li > a { display:block; padding:14px 10px; color:#fff; font-weight:700; text-transform:uppercase; font-size:0.9em; text-align:center; transition:background 0.3s; }
+        .nav-list > li:hover > a { background:var(--primary-color); }
+        .sub-menu { display:none; position:absolute; top:100%; left:0; width:100%; min-width:250px; background:#fff; box-shadow:0 8px 16px rgba(0,0,0,0.2); border-top:3px solid var(--primary-color); z-index:999; }
+        .nav-list > li:hover .sub-menu { display:block; }
+        .sub-menu a { padding:10px 20px; display:block; color:#333; font-size:0.95em; }
+        .sub-menu a:hover { background:var(--header-footer-bg); color:var(--secondary-color); }
+
+        /* BANNER SLIDESHOW - HOÀN HẢO 1049×257px */
+        .banner-slideshow {
+            width:100%;
+            max-width:1049px;
+            height:257px;
+            margin:20px auto;
+            position:relative;
+            overflow:hidden;
+            border-radius:15px;
+            box-shadow:0 12px 35px rgba(0,0,0,0.2);
+            background:#000;
+        }
+        .slide {
+            position:absolute;
+            top:0; left:0;
+            width:100%;
+            height:100%;
+            background-size:cover !important;
+            background-position:center center !important;
+            background-repeat:no-repeat;
+            opacity:0;
+            transition:opacity 1.4s ease-in-out;
+        }
+        .slide.active { opacity:1; z-index:1; }
+
+        /* Responsive banner */
+        @media (max-width: 1060px) {
+            .banner-slideshow {
+                height:calc(100vw * 257 / 1049);
+                max-width:100%;
+                border-radius:10px;
+            }
+        }
+
+        /* Section Title */
+        .section-title h2 {
+            font-size:2em; color:var(--secondary-color); text-transform:uppercase;
+            border-left:6px solid var(--primary-color); padding-left:15px; margin:40px 0 20px 10px; display:inline-block;
+        }
+
+        /* Product Grid */
+        .product-grid-new { display:flex; flex-direction:column; gap:20px; padding:0 10px; }
+        .large-item-container, .small-items-container { width:100%; }
+        .small-items-container { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:20px; }
+        .product-box { position:relative; overflow:hidden; border-radius:12px; box-shadow:var(--box-shadow); background:#fff; height:280px; transition:transform 0.3s, box-shadow 0.3s; }
+        .product-box:hover { transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.2); }
+        .product-box img { width:100%; height:100%; object-fit:cover; transition:transform 0.4s; }
+        .product-box:hover img { transform:scale(1.08); }
+        .product-overlay { position:absolute; bottom:0; left:0; right:0; padding:15px; background:linear-gradient(to top, rgba(0,0,0,0.85), transparent); color:#fff; text-align:center; }
+        .details-button { display:inline-block; margin-top:10px; padding:8px 18px; background:var(--primary-color); color:#fff; border-radius:5px; font-weight:600; transition:all 0.3s; }
+        .details-button:hover { background:var(--secondary-color); transform:scale(1.05); }
+
+        /* Single Banner */
+        .single-banner { margin:40px 0; text-align:center; }
+        .single-banner img { max-width:100%; height:auto; border-radius:12px; box-shadow:var(--box-shadow); }
+
+        /* Video & About */
+        .video-about-section { display:flex; flex-direction:column; gap:40px; padding:50px 0; background:var(--light-bg); }
+        .about-text h3 { font-size:1.8em; color:var(--primary-color); }
+        .video-embed { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; box-shadow:var(--box-shadow); }
+        .video-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+        /* Why Choose Us */
+        .why-choose-us { padding:60px 0; background:var(--light-bg); text-align:center; }
+        .why-header .title-box { background:linear-gradient(to right, var(--secondary-color), var(--primary-color)); color:#fff; padding:20px 50px; border-radius:0 50px 50px 0; display:inline-block; font-size:1.6em; margin-bottom:40px; box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+        .why-grid-new { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px; }
+        .why-item-new { background:#fff; padding:30px; border-radius:15px; box-shadow:var(--box-shadow); transition:0.3s; }
+        .why-item-new:hover { transform:translateY(-10px); box-shadow:0 15px 30px rgba(0,0,0,0.15); }
+        .why-item-new i { font-size:3em; color:var(--primary-color); margin-bottom:15px; }
+        .why-item-new h4 { color:var(--secondary-color); margin:15px 0; }
+
+        /* Footer */
+        footer { background:linear-gradient(to right,#e0e6ec,#d0d7e0); padding:50px 0 0; color:#333; }
+        .footer-cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; padding-bottom:30px; border-bottom:1px solid #ccc; }
+        .footer-col h3 { color:var(--secondary-color); border-bottom:2px solid var(--primary-color); padding-bottom:8px; display:inline-block; }
+        .contact-list li { display:flex; align-items:center; margin:12px 0; font-size:0.95em; }
+        .contact-list i { color:var(--primary-color); margin-right:10px; font-size:1.3em; }
+        .map-embed { position:relative; padding-bottom:80%; height:0; overflow:hidden; border:3px solid var(--primary-color); border-radius:10px; }
+        .map-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .copyright-footer { background:var(--dark-blue-footer); color:#fff; text-align:center; padding:20px; font-size:0.9em; }
+
+        /* Floating Buttons */
+        .contact-buttons {
+            position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:12px; z-index:1000;
+        }
+        .contact-button {
+            width:55px; height:55px; background:var(--primary-color); color:#fff; border-radius:50%;
+            display:flex; align-items:center; justify-content:center; font-size:1.8em;
+            box-shadow:0 5px 15px rgba(0,0,0,0.3); transition:all 0.3s;
+        }
+        .contact-button:hover { transform:scale(1.2); }
+        .contact-button.phone-call { background:#e62020; animation:pulse 2s infinite; }
+        @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(230,32,32,0.7)} 70%{box-shadow:0 0 0 15px rgba(230,32,32,0)} 100%{box-shadow:0 0 0 0 rgba(230,32,32,0)} }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hamburger { display:block; }
+            .nav-list { display:none; flex-direction:column; position:absolute; top:100%; left:0; width:100%; background:var(--secondary-color); z-index:999; }
+            .nav-list.active { display:flex; }
+            .sub-menu { position:static; box-shadow:none; border:none; background:#f0f0f0; }
+            .sub-menu a { padding-left:40px; }
+            .contact-buttons { bottom:10px; right:10px; }
+            .contact-button { width:48px; height:48px; font-size:1.5em; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-container">
+                    <div class="logo"><img src="image/tuan chau logo.png" alt="In Ấn Tuấn Châu"></div>
+                    <div class="logo-text">IN ẤN TUẤN CHÂU</div>
+                </div>
+                <button class="hamburger"><i class="fas relative fa-bars"></i></button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li><a href="#">Trang Chủ</a></li>
+                    <li><a href="#">Ấn Phẩm Truyền Thông</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#">Tem Nhãn Decal</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#">Ấn Phẩm Văn Phòng</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#">Hồ Sơ Thiết Kế</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#">In Offset</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#">Dịch Vụ Khác</a><ul class="sub-menu">/* menu con */</ul></li>
+                    <li><a href="#lienhe">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- banner chính - 1049×257px HOÀN HẢO -->
+    <section class="banner-slideshow">
+        <div class="slide active" style="background-image:url('image/banner1.jpg');"></div>
+        <div class="slide" style="background-image:url('image/banner3.jpg');"></div>
+        <div class="slide" style="background-image:url('image/banner4.jpg');"></div>
+    </section>
+
+    <!-- Nội dung chính (giữ nguyên toàn bộ phần sản phẩm của bạn) -->
+    <div class="container">
+        <!-- Dán toàn bộ phần <section id="an-pham-truyen-thong"> ... </section> của bạn vào đây -->
+        <!-- (Bạn có thể copy nguyên từ file cũ) -->
+    </div>
+
+    <!-- Banner phụ -->
+    <div class="container">
+        <div class="single-banner">
+            <img src="image/banner4.jpg" alt="Khuyến mãi" loading="lazy">
+        </div>
+    </div>
+
+    <!-- Footer & Nút liên hệ -->
+    <footer id="lienhe">
+        <div class="container">
+            <div class="footer-cols">
+                <!-- Footer content của bạn -->
+            </div>
+        </div>
+        <div class="copyright-footer">
+            <p>Copyright 2025 © <strong>In Ấn Tuấn Châu</strong> - Thiết kế bởi bạn</p>
+        </div>
+    </footer>
+
+    <div class="contact-buttons">
+        <a href="tel:0902544948" class="contact-button phone-call"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://zalo.me/0968229972" target="_blank" class="contact-button"><i class="fas fa-comment-dots"></i></a>
+        <a href="https://facebook.com" target="_blank" class="contact-button"><i class="fab fa-facebook-f"></i></a>
+    </div>
+
+    <script>
+        // Slideshow tự động - mượt mà
+        const slides = document.querySelectorAll('.slide');
+        let current = 0;
+        function nextSlide() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+        if(slides.length > 1) setInterval(nextSlide, 5000);
+
+        // Menu mobile
+        document.querySelector('.hamburger').onclick = () => {
+            document.querySelector('.nav-list').classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
